@@ -15,74 +15,95 @@ body {
 }
 
 .profile-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: #fffdf8;
     border-radius: 24px;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 90px rgba(139, 69, 19, 0.25);
     max-width: 550px;
     width: 100%;
     overflow: hidden;
     animation: slideUp 0.8s ease;
+    border: 1px solid #e8d5b7;
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .profile-header {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
     color: white;
-    padding: 50px 30px 40px;
+    padding: 50px 30px 45px;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.profile-header::after {
+.profile-header::before {
     content: '';
     position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .profile-pic {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 5px solid white;
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    border: 6px solid rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #fffdf8 0%, #f5e6c8 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0 auto 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1;
+    animation: fadeIn 1s ease;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    animation: pulse 1s ease infinite;
 }
 
 .profile-header h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-bottom: 8px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
 }
 
 .profile-header .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     opacity: 0.95;
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-body {
@@ -90,31 +111,44 @@ body {
 }
 
 .section {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease;
 }
 
 .section h2 {
     color: #8b4513;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #f5f5f5;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #f5e6c8;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    position: relative;
 }
 
 .section h2::before {
     content: '';
     width: 6px;
-    height: 24px;
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    height: 28px;
+    background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%);
+    border-radius: 3px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%);
     border-radius: 3px;
 }
 
 .section p {
-    color: #666;
-    line-height: 1.9;
+    color: #5a4a3a;
+    line-height: 2;
     margin-bottom: 12px;
     font-size: 0.95rem;
 }
@@ -123,63 +157,75 @@ body {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .section ul li {
     background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.25);
+    cursor: default;
 }
 
 .section ul li:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.05);
     box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #a0522d 0%, #cd853f 100%);
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 18px;
-    background: #f8f9ff;
-    border-radius: 12px;
+    gap: 14px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #fdf6e3 0%, #f5e6c8 100%);
+    border-radius: 14px;
     transition: all 0.3s ease;
+    border: 1px solid #e8d5b7;
 }
 
 .contact-item:hover {
-    background: linear-gradient(135deg, #8b451310 0%, #a0522d10 100%);
-    transform: translateX(5px);
+    background: linear-gradient(135deg, #f5e6c8 0%, #ede0c8 100%);
+    transform: translateX(8px);
+    box-shadow: 0 5px 20px rgba(139, 69, 19, 0.15);
 }
 
 .contact-item .icon {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.contact-item a {
-    color: #333;
+.contact-item:hover .icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.contact-item a,
+.contact-item span {
+    color: #4a3a2a;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
+    font-size: 0.95rem;
 }
 
 .contact-item a:hover {
@@ -187,23 +233,41 @@ body {
 }
 
 .footer {
-    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
-    padding: 20px;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
+    padding: 22px;
     text-align: center;
     color: white;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 @media (max-width: 600px) {
     .profile-header h1 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .profile-pic {
-        width: 100px;
-        height: 100px;
-        font-size: 2.2rem;
+        width: 110px;
+        height: 110px;
+        font-size: 2.5rem;
     }
 
     .profile-body {
