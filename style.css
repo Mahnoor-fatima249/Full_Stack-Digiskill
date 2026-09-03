@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    background: linear-gradient(135deg, #fdf6e3 0%, #f5e6c8 50%, #ede0c8 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
 }
 
 .profile-header {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     color: white;
     padding: 50px 30px 40px;
     text-align: center;
@@ -61,7 +61,7 @@ body {
     height: 130px;
     border-radius: 50%;
     border: 5px solid white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,7 +94,7 @@ body {
 }
 
 .section h2 {
-    color: #f5576c;
+    color: #8b4513;
     font-size: 1.3rem;
     margin-bottom: 15px;
     padding-bottom: 10px;
@@ -108,7 +108,7 @@ body {
     content: '';
     width: 6px;
     height: 24px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     border-radius: 3px;
 }
 
@@ -127,19 +127,19 @@ body {
 }
 
 .section ul li {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     color: white;
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
 }
 
 .section ul li:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
 }
 
 .contact-info {
@@ -159,14 +159,14 @@ body {
 }
 
 .contact-item:hover {
-    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+    background: linear-gradient(135deg, #8b451310 0%, #a0522d10 100%);
     transform: translateX(5px);
 }
 
 .contact-item .icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -183,11 +183,11 @@ body {
 }
 
 .contact-item a:hover {
-    color: #f5576c;
+    color: #8b4513;
 }
 
 .footer {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
     padding: 20px;
     text-align: center;
     color: white;
